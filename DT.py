@@ -26,7 +26,7 @@ df['trestbps'].describe()
 df['chol'].describe()
 df['thalach'].describe()
 df['oldpeak'].describe()
-df['thal'].descirbe()
+df['thal'].describe()
 df['cp'].describe()
 df['sex'].descirbe()
 df['fbs'].describe()
@@ -35,6 +35,33 @@ df['slope'].describe()
 df['ca'].describe()
 df['target'].describe()
 df['exang'].describe()
+#Outliers Calculations for the 5 stated attributes
+Q1 = df['age'].quantile(0.25)
+Q3 = df['age'].quantile(0.75)
+IQR = Q3 - Q1
+Out1,Out2 = (Q1 - 1.5 * IQR),(Q3 + 1.5 * IQR)
+print(Out1,Out2)
+Q1 = df['cp'].quantile(0.25)
+Q3 = df['cp'].quantile(0.75)
+IQR = Q3 - Q1
+Out1,Out2 = (Q1 - 1.5 * IQR),(Q3 + 1.5 * IQR)
+print(Out1,Out2)
+Q1 = df['chol'].quantile(0.25)
+Q3 = df['chol'].quantile(0.75)
+IQR = Q3 - Q1
+Out1,Out2 = (Q1 - 1.5 * IQR),(Q3 + 1.5 * IQR)
+print(Out1,Out2)
+Q1 = df['thal'].quantile(0.25)
+Q3 = df['thal'].quantile(0.75)
+IQR = Q3 - Q1
+Out1,Out2 = (Q1 - 1.5 * IQR),(Q3 + 1.5 * IQR)
+print(Out1,Out2)
+Q1 = df['thalach'].quantile(0.25)
+Q3 = df['thalach'].quantile(0.75)
+IQR = Q3 - Q1
+Out1,Out2 = (Q1 - 1.5 * IQR),(Q3 + 1.5 * IQR)
+print(Out1,Out2)
+
 # IN [4]: to plot the boxplots and shapes of attributes.
 fig=plt.figure(figsize=(15,30))
 
